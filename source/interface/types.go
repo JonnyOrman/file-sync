@@ -38,4 +38,16 @@ type Config struct {
 	ClientSecret string `yaml:"client_secret" mapstructure:"client_secret"`
 	TenantID     string `yaml:"tenant_id" mapstructure:"tenant_id"`
 	AccessToken  string `yaml:"access_token" mapstructure:"access_token"`
+	LocalPath    string `yaml:"local_path" mapstructure:"local_path"`
+	S3Bucket     string `yaml:"s3_bucket" mapstructure:"s3_bucket"`
+	S3Region     string `yaml:"s3_region" mapstructure:"s3_region"`
+	S3Prefix     string `yaml:"s3_prefix" mapstructure:"s3_prefix"`
+	GCSBucket    string `yaml:"gcs_bucket" mapstructure:"gcs_bucket"`
+	GCSProject   string `yaml:"gcs_project" mapstructure:"gcs_project"`
+	GCSPrefix    string `yaml:"gcs_prefix" mapstructure:"gcs_prefix"`
+	GCSKeyFile   string `yaml:"gcs_key_file" mapstructure:"gcs_key_file"`
+	AzureBlobAccount   string `yaml:"azure_blob_account" mapstructure:"azure_blob_account"`
+	AzureBlobContainer string `yaml:"azure_blob_container" mapstructure:"azure_blob_container"`
+	AzureBlobPrefix    string `yaml:"azure_blob_prefix" mapstructure:"azure_blob_prefix"`
+	AzureBlobKey       string `yaml:"azure_blob_key" mapstructure:"azure_blob_key"`
 }

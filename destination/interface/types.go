@@ -38,4 +38,8 @@ type Config struct {
 	AzureBlobContainer   string `yaml:"azure_blob_container" mapstructure:"azure_blob_container"`
 	AzureBlobPrefix      string `yaml:"azure_blob_prefix" mapstructure:"azure_blob_prefix"`
 	AzureBlobKey         string `yaml:"azure_blob_key" mapstructure:"azure_blob_key"`
+	ClientID             string `yaml:"client_id" mapstructure:"client_id"`
+	ClientSecret         string `yaml:"client_secret" mapstructure:"client_secret"`
+	TenantID             string `yaml:"tenant_id" mapstructure:"tenant_id"`
+	AccessToken          string `yaml:"access_token" mapstructure:"access_token"`
 }
