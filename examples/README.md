@@ -24,6 +24,16 @@ go build
 ./googledrive-s3
 ```
 
+### [OneDrive to OneDrive](./onedrive-onedrive)
+
+An example showing how to sync files between OneDrive services (cross-account backup, folder sync, etc.).
+
+```bash
+cd onedrive-onedrive
+go build
+./onedrive-onedrive
+```
+
 ## Creating Your Own Example
 
 To create your own example application:
