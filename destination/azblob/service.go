@@ -16,12 +16,12 @@ import (
 
 // Service implements Azure Blob Storage
 type Service struct {
-	config storageinterface.AzureBlobConfig
+	config Config
 	client *azblob.Client
 }
 
 // NewService creates a new Azure Blob storage service
-func NewService(config storageinterface.AzureBlobConfig) *Service {
+func NewService(config Config) *Service {
 	return &Service{
 		config: config,
 	}

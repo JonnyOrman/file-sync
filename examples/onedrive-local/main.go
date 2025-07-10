@@ -15,7 +15,7 @@ import (
 
 func main() {
 	// Create OneDrive source service configuration
-	sourceConfig := cloudinterface.OneDriveConfig{
+	sourceConfig := onedrive.Config{
 		ClientID: os.Getenv("ONEDRIVE_CLIENT_ID"),
 		TenantID: os.Getenv("ONEDRIVE_TENANT_ID"),
 	}
@@ -32,7 +32,7 @@ func main() {
 		log.Fatalf("Failed to get absolute path: %v", err)
 	}
 	
-	destConfig := storageinterface.LocalConfig{
+	destConfig := localstorage.Config{
 		LocalPath: absPath,
 	}
 

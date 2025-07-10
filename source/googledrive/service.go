@@ -18,12 +18,12 @@ import (
 
 // Service implements the Google Drive cloud service
 type Service struct {
-	config       cloudinterface.GoogleDriveConfig
+	config       Config
 	driveService *drive.Service
 }
 
 // NewService creates a new Google Drive service instance
-func NewService(config cloudinterface.GoogleDriveConfig) cloudinterface.CloudService {
+func NewService(config Config) cloudinterface.CloudService {
 	return &Service{
 		config: config,
 	}

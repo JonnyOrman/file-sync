@@ -17,14 +17,14 @@ import (
 
 // Service implements the CloudService interface for Azure Blob Storage
 type Service struct {
-	config    cloudinterface.AzureBlobConfig
+	config    Config
 	client    *azblob.Client
 	container string
 	prefix    string
 }
 
 // NewService creates a new Azure Blob source service
-func NewService(config cloudinterface.AzureBlobConfig) *Service {
+func NewService(config Config) *Service {
 	return &Service{
 		config:    config,
 		container: config.AzureBlobContainer,

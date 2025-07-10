@@ -14,13 +14,13 @@ import (
 
 func main() {
 	// Create Google Drive source service configuration
-	sourceConfig := cloudinterface.GoogleDriveConfig{
+	sourceConfig := googledrive.Config{
 		ClientID:     os.Getenv("GOOGLE_CLIENT_ID"),
 		ClientSecret: os.Getenv("GOOGLE_CLIENT_SECRET"),
 	}
 
 	// Create S3 destination service configuration
-	destConfig := storageinterface.S3Config{
+	destConfig := s3storage.Config{
 		S3Bucket: os.Getenv("S3_BUCKET"),
 		S3Region: os.Getenv("S3_REGION"),
 		S3Prefix: os.Getenv("S3_PREFIX"),

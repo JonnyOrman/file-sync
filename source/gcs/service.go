@@ -16,14 +16,14 @@ import (
 
 // Service implements the CloudService interface for Google Cloud Storage
 type Service struct {
-	config cloudinterface.GCSConfig
+	config Config
 	client *storage.Client
 	bucket string
 	prefix string
 }
 
 // NewService creates a new GCS source service
-func NewService(config cloudinterface.GCSConfig) *Service {
+func NewService(config Config) *Service {
 	return &Service{
 		config: config,
 		bucket: config.GCSBucket,

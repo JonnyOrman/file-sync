@@ -17,7 +17,7 @@ import (
 
 // Service implements the OneDrive cloud service
 type Service struct {
-	config cloudinterface.OneDriveConfig
+	config Config
 	token  string
 }
 
@@ -39,7 +39,7 @@ type DriveItemCollection struct {
 }
 
 // NewService creates a new OneDrive service instance
-func NewService(config cloudinterface.OneDriveConfig) cloudinterface.CloudService {
+func NewService(config Config) cloudinterface.CloudService {
 	return &Service{
 		config: config,
 	}

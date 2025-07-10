@@ -11,11 +11,11 @@ import (
 
 // Service implements local file system storage
 type Service struct {
-	config storageinterface.LocalConfig
+	config Config
 }
 
 // NewService creates a new local storage service
-func NewService(config storageinterface.LocalConfig) storageinterface.StorageService {
+func NewService(config Config) storageinterface.StorageService {
 	return &Service{
 		config: config,
 	}

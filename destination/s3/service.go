@@ -16,12 +16,12 @@ import (
 
 // Service implements AWS S3 storage
 type Service struct {
-	config   storageinterface.S3Config
+	config   Config
 	s3Client *s3.Client
 }
 
 // NewService creates a new S3 storage service
-func NewService(config storageinterface.S3Config) storageinterface.StorageService {
+func NewService(config Config) storageinterface.StorageService {
 	return &Service{
 		config: config,
 	}
