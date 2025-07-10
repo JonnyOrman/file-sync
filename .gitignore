@@ -19,10 +19,10 @@
 !*.md
 
 # Include modular architecture directories and files
-!cloud/
-!cloud/**
-!storage/
-!storage/**
+!source/
+!source/**
+!destination/
+!destination/**
 !examples/
 !examples/**
 

@@ -5,27 +5,27 @@ go 1.23.0
 toolchain go1.24.4
 
 require (
-	github.com/JonnyOrman/cloud-file-backup/cloud/interface v0.0.0
-	github.com/JonnyOrman/cloud-file-backup/storage/interface v0.0.0
+	github.com/JonnyOrman/cloud-file-backup/source/interface v0.0.0
+	github.com/JonnyOrman/cloud-file-backup/destination/interface v0.0.0
 )
 
 // Local module replacements
-replace github.com/JonnyOrman/cloud-file-backup/cloud/interface => ./cloud/interface
+replace github.com/JonnyOrman/cloud-file-backup/source/interface => ./source/interface
 
-replace github.com/JonnyOrman/cloud-file-backup/storage/interface => ./storage/interface
+replace github.com/JonnyOrman/cloud-file-backup/destination/interface => ./destination/interface
 
-// Cloud service modules (conditionally included via build tags)
-replace github.com/JonnyOrman/cloud-file-backup/cloud/onedrive => ./cloud/onedrive
+// Source service modules (conditionally included via build tags)
+replace github.com/JonnyOrman/cloud-file-backup/source/onedrive => ./source/onedrive
 
-replace github.com/JonnyOrman/cloud-file-backup/cloud/googledrive => ./cloud/googledrive
+replace github.com/JonnyOrman/cloud-file-backup/source/googledrive => ./source/googledrive
 
-replace github.com/JonnyOrman/cloud-file-backup/cloud/dropbox => ./cloud/dropbox
+replace github.com/JonnyOrman/cloud-file-backup/source/dropbox => ./source/dropbox
 
-// Storage service modules (conditionally included via build tags)
-replace github.com/JonnyOrman/cloud-file-backup/storage/local => ./storage/local
+// Destination service modules (conditionally included via build tags)
+replace github.com/JonnyOrman/cloud-file-backup/destination/local => ./destination/local
 
-replace github.com/JonnyOrman/cloud-file-backup/storage/s3 => ./storage/s3
+replace github.com/JonnyOrman/cloud-file-backup/destination/s3 => ./destination/s3
 
-replace github.com/JonnyOrman/cloud-file-backup/storage/gcs => ./storage/gcs
+replace github.com/JonnyOrman/cloud-file-backup/destination/gcs => ./destination/gcs
 
-replace github.com/JonnyOrman/cloud-file-backup/storage/azblob => ./storage/azblob
+replace github.com/JonnyOrman/cloud-file-backup/destination/azblob => ./destination/azblob

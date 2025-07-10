@@ -4,18 +4,18 @@ go 1.20
 
 require (
 	github.com/JonnyOrman/cloud-file-backup v0.0.0
-	github.com/JonnyOrman/cloud-file-backup/cloud/interface v0.0.0
-	github.com/JonnyOrman/cloud-file-backup/cloud/onedrive v0.0.0
-	github.com/JonnyOrman/cloud-file-backup/storage/interface v0.0.0
-	github.com/JonnyOrman/cloud-file-backup/storage/local v0.0.0
+	github.com/JonnyOrman/cloud-file-backup/source/interface v0.0.0
+	github.com/JonnyOrman/cloud-file-backup/source/onedrive v0.0.0
+	github.com/JonnyOrman/cloud-file-backup/destination/interface v0.0.0
+	github.com/JonnyOrman/cloud-file-backup/destination/local v0.0.0
 )
 
 replace github.com/JonnyOrman/cloud-file-backup => ../../
 
-replace github.com/JonnyOrman/cloud-file-backup/cloud/interface => ../../cloud/interface
+replace github.com/JonnyOrman/cloud-file-backup/source/interface => ../../source/interface
 
-replace github.com/JonnyOrman/cloud-file-backup/cloud/onedrive => ../../cloud/onedrive
+replace github.com/JonnyOrman/cloud-file-backup/source/onedrive => ../../source/onedrive
 
-replace github.com/JonnyOrman/cloud-file-backup/storage/interface => ../../storage/interface
+replace github.com/JonnyOrman/cloud-file-backup/destination/interface => ../../destination/interface
 
-replace github.com/JonnyOrman/cloud-file-backup/storage/local => ../../storage/local 
+replace github.com/JonnyOrman/cloud-file-backup/destination/local => ../../destination/local 

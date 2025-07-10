@@ -18,10 +18,10 @@ import (
     "log"
     
     backup "github.com/JonnyOrman/cloud-file-backup"
-    cloudinterface "github.com/JonnyOrman/cloud-file-backup/cloud/interface"
-    onedrive "github.com/JonnyOrman/cloud-file-backup/cloud/onedrive"
-    storageinterface "github.com/JonnyOrman/cloud-file-backup/storage/interface"
-    localstorage "github.com/JonnyOrman/cloud-file-backup/storage/local"
+    cloudinterface "github.com/JonnyOrman/cloud-file-backup/source/interface"
+    onedrive "github.com/JonnyOrman/cloud-file-backup/source/onedrive"
+    storageinterface "github.com/JonnyOrman/cloud-file-backup/destination/interface"
+    localstorage "github.com/JonnyOrman/cloud-file-backup/destination/local"
 )
 
 func main() {
@@ -149,11 +149,11 @@ Returns a copy of the current synchronization state.
 Import the specific cloud service implementation you want to use:
 
 ```go
-import "github.com/JonnyOrman/cloud-file-backup/cloud/onedrive"
+import "github.com/JonnyOrman/cloud-file-backup/source/onedrive"
 // or
-import "github.com/JonnyOrman/cloud-file-backup/cloud/googledrive"
+import "github.com/JonnyOrman/cloud-file-backup/source/googledrive"
 // or
-import "github.com/JonnyOrman/cloud-file-backup/cloud/dropbox"
+import "github.com/JonnyOrman/cloud-file-backup/source/dropbox"
 ```
 
 #### OneDrive
@@ -190,13 +190,13 @@ cloudService := dropbox.NewService(cloudConfig)
 Import the specific storage implementation you want to use:
 
 ```go
-import "github.com/JonnyOrman/cloud-file-backup/storage/local"
+import "github.com/JonnyOrman/cloud-file-backup/destination/local"
 // or
-import "github.com/JonnyOrman/cloud-file-backup/storage/s3"
+import "github.com/JonnyOrman/cloud-file-backup/destination/s3"
 // or
-import "github.com/JonnyOrman/cloud-file-backup/storage/gcs"
+import "github.com/JonnyOrman/cloud-file-backup/destination/gcs"
 // or
-import "github.com/JonnyOrman/cloud-file-backup/storage/azblob"
+import "github.com/JonnyOrman/cloud-file-backup/destination/azblob"
 ```
 
 #### Local Storage

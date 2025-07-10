@@ -7,10 +7,10 @@ import (
 	"path/filepath"
 
 	backup "github.com/JonnyOrman/cloud-file-backup"
-	cloudinterface "github.com/JonnyOrman/cloud-file-backup/cloud/interface"
-	onedrive "github.com/JonnyOrman/cloud-file-backup/cloud/onedrive"
-	storageinterface "github.com/JonnyOrman/cloud-file-backup/storage/interface"
-	localstorage "github.com/JonnyOrman/cloud-file-backup/storage/local"
+	cloudinterface "github.com/JonnyOrman/cloud-file-backup/source/interface"
+	onedrive "github.com/JonnyOrman/cloud-file-backup/source/onedrive"
+	storageinterface "github.com/JonnyOrman/cloud-file-backup/destination/interface"
+	localstorage "github.com/JonnyOrman/cloud-file-backup/destination/local"
 )
 
 func main() {

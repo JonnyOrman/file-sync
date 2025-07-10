@@ -8,8 +8,8 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/JonnyOrman/cloud-file-backup/cloud/interface"
-	"github.com/JonnyOrman/cloud-file-backup/storage/interface"
+	"github.com/JonnyOrman/cloud-file-backup/source/interface"
+	"github.com/JonnyOrman/cloud-file-backup/destination/interface"
 )
 
 // FileState tracks the state of a file for incremental sync

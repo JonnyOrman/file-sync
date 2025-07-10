@@ -6,10 +6,10 @@ import (
 	"os"
 
 	backup "github.com/JonnyOrman/cloud-file-backup"
-	cloudinterface "github.com/JonnyOrman/cloud-file-backup/cloud/interface"
-	googledrive "github.com/JonnyOrman/cloud-file-backup/cloud/googledrive"
-	storageinterface "github.com/JonnyOrman/cloud-file-backup/storage/interface"
-	s3storage "github.com/JonnyOrman/cloud-file-backup/storage/s3"
+	cloudinterface "github.com/JonnyOrman/cloud-file-backup/source/interface"
+	googledrive "github.com/JonnyOrman/cloud-file-backup/source/googledrive"
+	storageinterface "github.com/JonnyOrman/cloud-file-backup/destination/interface"
+	s3storage "github.com/JonnyOrman/cloud-file-backup/destination/s3"
 )
 
 func main() {

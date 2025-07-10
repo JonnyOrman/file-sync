@@ -38,13 +38,13 @@ To create your own example application:
 
 ## Available Cloud Services
 
-- OneDrive (`github.com/JonnyOrman/cloud-file-backup/cloud/onedrive`)
-- Google Drive (`github.com/JonnyOrman/cloud-file-backup/cloud/googledrive`)
-- Dropbox (`github.com/JonnyOrman/cloud-file-backup/cloud/dropbox`)
+- OneDrive (`github.com/JonnyOrman/cloud-file-backup/source/onedrive`)
+- Google Drive (`github.com/JonnyOrman/cloud-file-backup/source/googledrive`)
+- Dropbox (`github.com/JonnyOrman/cloud-file-backup/source/dropbox`)
 
 ## Available Storage Backends
 
-- Local Storage (`github.com/JonnyOrman/cloud-file-backup/storage/local`)
-- Amazon S3 (`github.com/JonnyOrman/cloud-file-backup/storage/s3`)
-- Google Cloud Storage (`github.com/JonnyOrman/cloud-file-backup/storage/gcs`)
-- Azure Blob Storage (`github.com/JonnyOrman/cloud-file-backup/storage/azblob`) 
+- Local Storage (`github.com/JonnyOrman/cloud-file-backup/destination/local`)
+- Amazon S3 (`github.com/JonnyOrman/cloud-file-backup/destination/s3`)
+- Google Cloud Storage (`github.com/JonnyOrman/cloud-file-backup/destination/gcs`)
+- Azure Blob Storage (`github.com/JonnyOrman/cloud-file-backup/destination/azblob`) 
