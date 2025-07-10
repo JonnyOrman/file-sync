@@ -1,0 +1,123 @@
+# Example configuration file for cloud-file-backup
+# Copy this to ~/.cloud-file-backup.yaml and fill in your values
+
+# Cloud service to use: "onedrive", "googledrive", or "dropbox"
+service: "onedrive"
+
+# === OneDrive Configuration ===
+# Azure AD Application Configuration (required for OneDrive)
+# You need to register an application in Azure AD and get these values
+client_id: "your-azure-ad-app-client-id"
+tenant_id: "your-azure-ad-tenant-id"
+
+# === Google Drive Configuration ===
+# Google Cloud Console Application Configuration (required for Google Drive)
+# You need to create a project in Google Cloud Console and enable Drive API
+# client_id: "your-google-client-id.apps.googleusercontent.com"
+# client_secret: "your-google-client-secret"
+
+# === Dropbox Configuration ===
+# Dropbox App Configuration (required for Dropbox)
+# You need to create an app in Dropbox App Console and generate an access token
+# access_token: "your-dropbox-access-token"
+
+# Cloud folder path to sync
+# For OneDrive: relative to root (e.g., "Documents/MyFolder") or "/" for root
+# For Google Drive: folder name or path (e.g., "MyFolder" or "ParentFolder/SubFolder")
+# For Dropbox: path relative to root (e.g., "/Documents/MyFolder") or "/" for root
+cloud_path: "Documents/BackupFolder"
+
+# === Storage Configuration ===
+# Storage type: "local", "s3", "gcs", or "azblob"
+storage_type: "local"
+
+# Local storage configuration (when storage_type is "local")
+local_path: "./downloads"
+
+# AWS S3 storage configuration (when storage_type is "s3")
+# s3_bucket: "my-backup-bucket"
+# s3_region: "us-east-1"
+# s3_prefix: "cloud-backups/"  # Optional prefix for all files
+
+# Google Cloud Storage configuration (when storage_type is "gcs")
+# gcs_bucket: "my-gcs-bucket"
+# gcs_project: "my-gcp-project-id"
+# gcs_prefix: "cloud-backups/"  # Optional prefix for all objects
+# gcs_key_file: "/path/to/service-account-key.json"  # Optional service account key
+
+# Azure Blob Storage configuration (when storage_type is "azblob")
+# azure_blob_account: "mystorageaccount"
+# azure_blob_container: "backups"
+# azure_blob_prefix: "cloud-files/"  # Optional prefix for all blobs
+# azure_blob_key: "storage-account-key"  # Optional storage account key
+
+# File to store sync state (tracks what has been downloaded)
+state_file: "sync-state.json"
+
+# === Service-Specific Examples ===
+
+# Example OneDrive configuration:
+# service: "onedrive"
+# client_id: "12345678-1234-1234-1234-123456789012"
+# tenant_id: "87654321-4321-4321-4321-210987654321"
+# cloud_path: "Documents/BackupFolder"
+
+# Example Google Drive configuration:
+# service: "googledrive"
+# client_id: "your-google-client-id.apps.googleusercontent.com"
+# client_secret: "your-google-client-secret"
+# cloud_path: "BackupFolder"
+
+# Example Dropbox configuration:
+# service: "dropbox"
+# access_token: "sl.BxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxA"
+# cloud_path: "/BackupFolder"
+
+# Example S3 storage configuration:
+# storage_type: "s3"
+# s3_bucket: "my-backup-bucket"
+# s3_region: "us-west-2"
+# s3_prefix: "onedrive-backup/"
+
+# Complete S3 example:
+# service: "onedrive"
+# client_id: "12345678-1234-1234-1234-123456789012"
+# tenant_id: "87654321-4321-4321-4321-210987654321"
+# cloud_path: "Documents"
+# storage_type: "s3"
+# s3_bucket: "my-cloud-backup"
+# s3_region: "us-east-1"
+# s3_prefix: "cloud-files/"
+# state_file: "sync-state.json"
+
+# Complete GCS example:
+# service: "googledrive"
+# client_id: "your-google-client-id.apps.googleusercontent.com"
+# client_secret: "your-google-client-secret"
+# cloud_path: "Documents"
+# storage_type: "gcs"
+# gcs_bucket: "my-gcs-backup"
+# gcs_project: "my-project-id"
+# gcs_prefix: "googledrive-backup/"
+# state_file: "sync-state.json"
+
+# Complete Azure Blob example:
+# service: "onedrive"
+# client_id: "12345678-1234-1234-1234-123456789012"
+# tenant_id: "87654321-4321-4321-4321-210987654321"
+# cloud_path: "Documents"
+# storage_type: "azblob"
+# azure_blob_account: "mystorageaccount"
+# azure_blob_container: "backups"
+# azure_blob_prefix: "onedrive-files/"
+# state_file: "sync-state.json"
+
+# Complete Dropbox example:
+# service: "dropbox"
+# access_token: "sl.BxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxA"
+# cloud_path: "/Documents"
+# storage_type: "s3"
+# s3_bucket: "my-dropbox-backup"
+# s3_region: "us-east-1"
+# s3_prefix: "dropbox-files/"
+# state_file: "sync-state.json" 

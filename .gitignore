@@ -1,0 +1,51 @@
+# Exclude everything by default
+*
+
+# Include essential project files
+!.gitignore
+!go.mod
+!go.sum
+!backup.go
+!README.md
+!Makefile
+!.cloud-file-backup.yaml.example
+
+# Include LICENSE if it exists
+!LICENSE
+!LICENSE.txt
+!LICENSE.md
+
+# Include documentation
+!*.md
+
+# Include modular architecture directories and files
+!cloud/
+!cloud/**
+!storage/
+!storage/**
+!examples/
+!examples/**
+
+# Include Go source files in subdirectories
+!**/*.go
+
+# Exclude test files and generated files (override the Go inclusion)
+**/*_test.go
+**/mock_*.go
+**/mocks/
+
+# Exclude authentication tokens and sensitive files
+google-token.json
+azure-token.json
+
+# Exclude build artifacts
+cloud-file-backup
+cloud-file-backup-*
+
+# Exclude example build artifacts
+examples/*/downloads/
+examples/*/*.json
+examples/*/sync-state.json
+examples/*/*.exe
+examples/onedrive-local/onedrive-local
+examples/googledrive-s3/googledrive-s3 
