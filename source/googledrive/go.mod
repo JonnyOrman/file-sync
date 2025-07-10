@@ -1,9 +1,9 @@
-module github.com/JonnyOrman/cloud-file-backup/cloud/googledrive
+module github.com/JonnyOrman/cloud-file-backup/source/googledrive
 
 go 1.21
 
 require (
-	github.com/JonnyOrman/cloud-file-backup/modules/cloud-interface v0.0.0
+	github.com/JonnyOrman/cloud-file-backup/source/interface v0.0.0
 	golang.org/x/oauth2 v0.15.0
 	google.golang.org/api v0.153.0
 )
@@ -28,4 +28,4 @@ require (
 	google.golang.org/protobuf v1.31.0 // indirect
 )
 
-replace github.com/JonnyOrman/cloud-file-backup/modules/cloud-interface => ../cloud-interface
+replace github.com/JonnyOrman/cloud-file-backup/source/interface => ../interface

@@ -1,4 +1,4 @@
-module github.com/JonnyOrman/cloud-file-backup/storage/azblob
+module github.com/JonnyOrman/cloud-file-backup/destination/azblob
 
 go 1.21
 
@@ -6,7 +6,7 @@ require (
 	github.com/Azure/azure-sdk-for-go/sdk/azcore v1.7.0
 	github.com/Azure/azure-sdk-for-go/sdk/azidentity v1.3.0
 	github.com/Azure/azure-sdk-for-go/sdk/storage/azblob v1.2.0
-	github.com/JonnyOrman/cloud-file-backup/modules/storage-interface v0.0.0
+	github.com/JonnyOrman/cloud-file-backup/destination/interface v0.0.0
 )
 
 require (
@@ -22,4 +22,4 @@ require (
 	golang.org/x/text v0.9.0 // indirect
 )
 
-replace github.com/JonnyOrman/cloud-file-backup/modules/storage-interface => ../storage-interface
+replace github.com/JonnyOrman/cloud-file-backup/destination/interface => ../interface

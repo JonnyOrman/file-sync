@@ -1,9 +1,9 @@
-module github.com/JonnyOrman/cloud-file-backup/cloud/dropbox
+module github.com/JonnyOrman/cloud-file-backup/source/dropbox
 
 go 1.21
 
 require (
-	github.com/JonnyOrman/cloud-file-backup/modules/cloud-interface v0.0.0
+	github.com/JonnyOrman/cloud-file-backup/source/interface v0.0.0
 	github.com/dropbox/dropbox-sdk-go-unofficial/v6 v6.0.5
 )
 
@@ -15,4 +15,4 @@ require (
 	google.golang.org/protobuf v1.25.0 // indirect
 )
 
-replace github.com/JonnyOrman/cloud-file-backup/modules/cloud-interface => ../cloud-interface
+replace github.com/JonnyOrman/cloud-file-backup/source/interface => ../interface

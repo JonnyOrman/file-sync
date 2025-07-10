@@ -1,10 +1,10 @@
-module github.com/JonnyOrman/cloud-file-backup/storage/gcs
+module github.com/JonnyOrman/cloud-file-backup/destination/gcs
 
 go 1.21
 
 require (
 	cloud.google.com/go/storage v1.35.1
-	github.com/JonnyOrman/cloud-file-backup/modules/storage-interface v0.0.0
+	github.com/JonnyOrman/cloud-file-backup/destination/interface v0.0.0
 	google.golang.org/api v0.150.0
 )
 
@@ -36,4 +36,4 @@ require (
 	google.golang.org/protobuf v1.31.0 // indirect
 )
 
-replace github.com/JonnyOrman/cloud-file-backup/modules/storage-interface => ../storage-interface
+replace github.com/JonnyOrman/cloud-file-backup/destination/interface => ../interface

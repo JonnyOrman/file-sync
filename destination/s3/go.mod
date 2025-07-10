@@ -1,9 +1,9 @@
-module github.com/JonnyOrman/cloud-file-backup/storage/s3
+module github.com/JonnyOrman/cloud-file-backup/destination/s3
 
 go 1.21
 
 require (
-	github.com/JonnyOrman/cloud-file-backup/modules/storage-interface v0.0.0
+	github.com/JonnyOrman/cloud-file-backup/destination/interface v0.0.0
 	github.com/aws/aws-sdk-go-v2 v1.24.0
 	github.com/aws/aws-sdk-go-v2/config v1.26.1
 	github.com/aws/aws-sdk-go-v2/service/s3 v1.47.5
@@ -27,4 +27,4 @@ require (
 	github.com/aws/smithy-go v1.19.0 // indirect
 )
 
-replace github.com/JonnyOrman/cloud-file-backup/modules/storage-interface => ../storage-interface
+replace github.com/JonnyOrman/cloud-file-backup/destination/interface => ../interface

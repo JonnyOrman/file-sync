@@ -1,4 +1,4 @@
-module github.com/JonnyOrman/cloud-file-backup/cloud/onedrive
+module github.com/JonnyOrman/cloud-file-backup/source/onedrive
 
 go 1.23.0
 
@@ -7,7 +7,7 @@ toolchain go1.24.4
 require (
 	github.com/Azure/azure-sdk-for-go/sdk/azcore v1.18.0
 	github.com/Azure/azure-sdk-for-go/sdk/azidentity v1.10.1
-	github.com/JonnyOrman/cloud-file-backup/modules/cloud-interface v0.0.0
+	github.com/JonnyOrman/cloud-file-backup/source/interface v0.0.0
 )
 
 require (
@@ -23,4 +23,4 @@ require (
 	golang.org/x/text v0.25.0 // indirect
 )
 
-replace github.com/JonnyOrman/cloud-file-backup/modules/cloud-interface => ../cloud-interface
+replace github.com/JonnyOrman/cloud-file-backup/source/interface => ../interface
