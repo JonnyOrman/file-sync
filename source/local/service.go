@@ -13,12 +13,12 @@ import (
 
 // Service implements the CloudService interface for local file system
 type Service struct {
-	config cloudinterface.Config
+	config cloudinterface.LocalConfig
 	rootPath string
 }
 
 // NewService creates a new local source service
-func NewService(config cloudinterface.Config) *Service {
+func NewService(config cloudinterface.LocalConfig) *Service {
 	return &Service{
 		config: config,
 		rootPath: config.LocalPath,

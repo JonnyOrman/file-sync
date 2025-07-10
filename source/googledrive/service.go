@@ -13,17 +13,17 @@ import (
 	"golang.org/x/oauth2/google"
 	"google.golang.org/api/drive/v3"
 	"google.golang.org/api/option"
-	"github.com/JonnyOrman/cloud-file-backup/cloud/interface"
+	cloudinterface "github.com/JonnyOrman/cloud-file-backup/source/interface"
 )
 
 // Service implements the Google Drive cloud service
 type Service struct {
-	config       cloudinterface.Config
+	config       cloudinterface.GoogleDriveConfig
 	driveService *drive.Service
 }
 
 // NewService creates a new Google Drive service instance
-func NewService(config cloudinterface.Config) cloudinterface.CloudService {
+func NewService(config cloudinterface.GoogleDriveConfig) cloudinterface.CloudService {
 	return &Service{
 		config: config,
 	}

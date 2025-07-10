@@ -11,17 +11,17 @@ import (
 	"github.com/aws/aws-sdk-go-v2/config"
 	"github.com/aws/aws-sdk-go-v2/service/s3"
 	"github.com/aws/aws-sdk-go-v2/service/s3/types"
-	"github.com/JonnyOrman/cloud-file-backup/storage/interface"
+	storageinterface "github.com/JonnyOrman/cloud-file-backup/destination/interface"
 )
 
 // Service implements AWS S3 storage
 type Service struct {
-	config   storageinterface.Config
+	config   storageinterface.S3Config
 	s3Client *s3.Client
 }
 
 // NewService creates a new S3 storage service
-func NewService(config storageinterface.Config) storageinterface.StorageService {
+func NewService(config storageinterface.S3Config) storageinterface.StorageService {
 	return &Service{
 		config: config,
 	}

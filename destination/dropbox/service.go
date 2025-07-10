@@ -12,12 +12,12 @@ import (
 
 // Service implements the StorageService interface for Dropbox
 type Service struct {
-	config storageinterface.Config
+	config storageinterface.DropboxConfig
 	client files.Client
 }
 
 // NewService creates a new Dropbox destination service
-func NewService(config storageinterface.Config) *Service {
+func NewService(config storageinterface.DropboxConfig) *Service {
 	return &Service{
 		config: config,
 	}

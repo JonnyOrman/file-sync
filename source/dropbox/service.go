@@ -11,18 +11,18 @@ import (
 	"github.com/dropbox/dropbox-sdk-go-unofficial/v6/dropbox"
 	"github.com/dropbox/dropbox-sdk-go-unofficial/v6/dropbox/files"
 	"github.com/dropbox/dropbox-sdk-go-unofficial/v6/dropbox/users"
-	"github.com/JonnyOrman/cloud-file-backup/cloud/interface"
+	cloudinterface "github.com/JonnyOrman/cloud-file-backup/source/interface"
 )
 
 // Service implements the Dropbox cloud service
 type Service struct {
-	config      cloudinterface.Config
+	config      cloudinterface.DropboxConfig
 	filesClient files.Client
 	usersClient users.Client
 }
 
 // NewService creates a new Dropbox service instance
-func NewService(config cloudinterface.Config) cloudinterface.CloudService {
+func NewService(config cloudinterface.DropboxConfig) cloudinterface.CloudService {
 	return &Service{
 		config: config,
 	}

@@ -6,16 +6,16 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/JonnyOrman/cloud-file-backup/storage/interface"
+	storageinterface "github.com/JonnyOrman/cloud-file-backup/destination/interface"
 )
 
 // Service implements local file system storage
 type Service struct {
-	config storageinterface.Config
+	config storageinterface.LocalConfig
 }
 
 // NewService creates a new local storage service
-func NewService(config storageinterface.Config) storageinterface.StorageService {
+func NewService(config storageinterface.LocalConfig) storageinterface.StorageService {
 	return &Service{
 		config: config,
 	}

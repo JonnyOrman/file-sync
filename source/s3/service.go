@@ -17,14 +17,14 @@ import (
 
 // Service implements the CloudService interface for AWS S3
 type Service struct {
-	config cloudinterface.Config
+	config cloudinterface.S3Config
 	client *s3.Client
 	bucket string
 	prefix string
 }
 
 // NewService creates a new S3 source service
-func NewService(config cloudinterface.Config) *Service {
+func NewService(config cloudinterface.S3Config) *Service {
 	return &Service{
 		config: config,
 		bucket: config.S3Bucket,

@@ -10,18 +10,18 @@ import (
 	"github.com/Azure/azure-sdk-for-go/sdk/azcore"
 	"github.com/Azure/azure-sdk-for-go/sdk/azidentity"
 	"github.com/Azure/azure-sdk-for-go/sdk/storage/azblob"
-	"github.com/JonnyOrman/cloud-file-backup/storage/interface"
+	storageinterface "github.com/JonnyOrman/cloud-file-backup/destination/interface"
 )
 
 
 // Service implements Azure Blob Storage
 type Service struct {
-	config storageinterface.Config
+	config storageinterface.AzureBlobConfig
 	client *azblob.Client
 }
 
 // NewService creates a new Azure Blob storage service
-func NewService(config storageinterface.Config) *Service {
+func NewService(config storageinterface.AzureBlobConfig) *Service {
 	return &Service{
 		config: config,
 	}

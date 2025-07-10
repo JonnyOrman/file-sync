@@ -15,18 +15,16 @@ import (
 func main() {
 	// Create source OneDrive service configuration
 	// This could be a different OneDrive account or folder
-	sourceConfig := cloudinterface.Config{
-		Service:  "onedrive",
+	sourceConfig := cloudinterface.OneDriveConfig{
 		ClientID: os.Getenv("SOURCE_ONEDRIVE_CLIENT_ID"),
 		TenantID: os.Getenv("SOURCE_ONEDRIVE_TENANT_ID"),
 	}
 
 	// Create destination OneDrive service configuration
 	// This could be a different OneDrive account or folder
-	destConfig := storageinterface.Config{
-		Type:      "onedrive",
-		ClientID:  os.Getenv("DEST_ONEDRIVE_CLIENT_ID"),
-		TenantID:  os.Getenv("DEST_ONEDRIVE_TENANT_ID"),
+	destConfig := storageinterface.OneDriveConfig{
+		ClientID:     os.Getenv("DEST_ONEDRIVE_CLIENT_ID"),
+		TenantID:     os.Getenv("DEST_ONEDRIVE_TENANT_ID"),
 		ClientSecret: os.Getenv("DEST_ONEDRIVE_CLIENT_SECRET"),
 	}
 

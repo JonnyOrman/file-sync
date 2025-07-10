@@ -31,21 +31,45 @@ type CloudService interface {
 	DownloadFile(ctx context.Context, fileID, localPath string) error
 }
 
-// Config represents the configuration for a cloud service
-type Config struct {
-	Service      string `yaml:"service" mapstructure:"service"`
+// OneDriveConfig represents the configuration for OneDrive source service
+type OneDriveConfig struct {
+	ClientID string `yaml:"client_id" mapstructure:"client_id"`
+	TenantID string `yaml:"tenant_id" mapstructure:"tenant_id"`
+}
+
+// GoogleDriveConfig represents the configuration for Google Drive source service
+type GoogleDriveConfig struct {
 	ClientID     string `yaml:"client_id" mapstructure:"client_id"`
 	ClientSecret string `yaml:"client_secret" mapstructure:"client_secret"`
-	TenantID     string `yaml:"tenant_id" mapstructure:"tenant_id"`
-	AccessToken  string `yaml:"access_token" mapstructure:"access_token"`
-	LocalPath    string `yaml:"local_path" mapstructure:"local_path"`
-	S3Bucket     string `yaml:"s3_bucket" mapstructure:"s3_bucket"`
-	S3Region     string `yaml:"s3_region" mapstructure:"s3_region"`
-	S3Prefix     string `yaml:"s3_prefix" mapstructure:"s3_prefix"`
-	GCSBucket    string `yaml:"gcs_bucket" mapstructure:"gcs_bucket"`
-	GCSProject   string `yaml:"gcs_project" mapstructure:"gcs_project"`
-	GCSPrefix    string `yaml:"gcs_prefix" mapstructure:"gcs_prefix"`
-	GCSKeyFile   string `yaml:"gcs_key_file" mapstructure:"gcs_key_file"`
+}
+
+// DropboxConfig represents the configuration for Dropbox source service
+type DropboxConfig struct {
+	AccessToken string `yaml:"access_token" mapstructure:"access_token"`
+}
+
+// LocalConfig represents the configuration for local filesystem source service
+type LocalConfig struct {
+	LocalPath string `yaml:"local_path" mapstructure:"local_path"`
+}
+
+// S3Config represents the configuration for AWS S3 source service
+type S3Config struct {
+	S3Bucket string `yaml:"s3_bucket" mapstructure:"s3_bucket"`
+	S3Region string `yaml:"s3_region" mapstructure:"s3_region"`
+	S3Prefix string `yaml:"s3_prefix" mapstructure:"s3_prefix"`
+}
+
+// GCSConfig represents the configuration for Google Cloud Storage source service
+type GCSConfig struct {
+	GCSBucket  string `yaml:"gcs_bucket" mapstructure:"gcs_bucket"`
+	GCSProject string `yaml:"gcs_project" mapstructure:"gcs_project"`
+	GCSPrefix  string `yaml:"gcs_prefix" mapstructure:"gcs_prefix"`
+	GCSKeyFile string `yaml:"gcs_key_file" mapstructure:"gcs_key_file"`
+}
+
+// AzureBlobConfig represents the configuration for Azure Blob Storage source service
+type AzureBlobConfig struct {
 	AzureBlobAccount   string `yaml:"azure_blob_account" mapstructure:"azure_blob_account"`
 	AzureBlobContainer string `yaml:"azure_blob_container" mapstructure:"azure_blob_container"`
 	AzureBlobPrefix    string `yaml:"azure_blob_prefix" mapstructure:"azure_blob_prefix"`

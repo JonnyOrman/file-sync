@@ -8,18 +8,18 @@ import (
 
 	"cloud.google.com/go/storage"
 	"google.golang.org/api/option"
-	"github.com/JonnyOrman/cloud-file-backup/storage/interface"
+	storageinterface "github.com/JonnyOrman/cloud-file-backup/destination/interface"
 )
 
 // Service implements Google Cloud Storage
 type Service struct {
-	config    storageinterface.Config
+	config    storageinterface.GCSConfig
 	client    *storage.Client
 	bucket    *storage.BucketHandle
 }
 
 // NewService creates a new GCS storage service
-func NewService(config storageinterface.Config) storageinterface.StorageService {
+func NewService(config storageinterface.GCSConfig) storageinterface.StorageService {
 	return &Service{
 		config: config,
 	}

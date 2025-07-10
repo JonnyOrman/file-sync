@@ -12,12 +12,12 @@ import (
 
 	"github.com/Azure/azure-sdk-for-go/sdk/azcore/policy"
 	"github.com/Azure/azure-sdk-for-go/sdk/azidentity"
-	"github.com/JonnyOrman/cloud-file-backup/cloud/interface"
+	cloudinterface "github.com/JonnyOrman/cloud-file-backup/source/interface"
 )
 
 // Service implements the OneDrive cloud service
 type Service struct {
-	config cloudinterface.Config
+	config cloudinterface.OneDriveConfig
 	token  string
 }
 
@@ -39,7 +39,7 @@ type DriveItemCollection struct {
 }
 
 // NewService creates a new OneDrive service instance
-func NewService(config cloudinterface.Config) cloudinterface.CloudService {
+func NewService(config cloudinterface.OneDriveConfig) cloudinterface.CloudService {
 	return &Service{
 		config: config,
 	}

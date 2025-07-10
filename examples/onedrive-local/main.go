@@ -14,9 +14,8 @@ import (
 )
 
 func main() {
-	// Create cloud service configuration for OneDrive
-	cloudConfig := cloudinterface.Config{
-		Service:  "onedrive",
+	// Create OneDrive source service configuration
+	sourceConfig := cloudinterface.OneDriveConfig{
 		ClientID: os.Getenv("ONEDRIVE_CLIENT_ID"),
 		TenantID: os.Getenv("ONEDRIVE_TENANT_ID"),
 	}
@@ -33,16 +32,15 @@ func main() {
 		log.Fatalf("Failed to get absolute path: %v", err)
 	}
 	
-	storageConfig := storageinterface.Config{
-		Type:      "local",
+	destConfig := storageinterface.LocalConfig{
 		LocalPath: absPath,
 	}
 
-	// Create the cloud service
-	cloudService := onedrive.NewService(cloudConfig)
+	// Create the source service
+	sourceService := onedrive.NewService(sourceConfig)
 
-	// Create the storage service
-	storageService := localstorage.NewService(storageConfig)
+	// Create the destination service
+	destService := localstorage.NewService(destConfig)
 
 	// Create backup client configuration
 	backupConfig := backup.Config{
@@ -50,7 +48,7 @@ func main() {
 	}
 
 	// Create backup client with the services
-	client, err := backup.NewBackupClient(cloudService, storageService, backupConfig)
+	client, err := backup.NewBackupClient(sourceService, destService, backupConfig)
 	if err != nil {
 		log.Fatalf("Failed to create backup client: %v", err)
 	}

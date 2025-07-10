@@ -15,14 +15,14 @@ import (
 
 // Service implements the StorageService interface for OneDrive
 type Service struct {
-	config storageinterface.Config
+	config storageinterface.OneDriveConfig
 	client *armgraphservices.GraphServicesClient
 	tenantID string
 	clientID string
 }
 
 // NewService creates a new OneDrive destination service
-func NewService(config storageinterface.Config) *Service {
+func NewService(config storageinterface.OneDriveConfig) *Service {
 	return &Service{
 		config: config,
 		tenantID: config.TenantID,

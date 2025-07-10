@@ -13,31 +13,29 @@ import (
 )
 
 func main() {
-	// Create cloud service configuration for Google Drive
-	cloudConfig := cloudinterface.Config{
-		Service:      "googledrive",
+	// Create Google Drive source service configuration
+	sourceConfig := cloudinterface.GoogleDriveConfig{
 		ClientID:     os.Getenv("GOOGLE_CLIENT_ID"),
 		ClientSecret: os.Getenv("GOOGLE_CLIENT_SECRET"),
 	}
 
-	// Create storage service configuration for S3
-	storageConfig := storageinterface.Config{
-		Type:     "s3",
+	// Create S3 destination service configuration
+	destConfig := storageinterface.S3Config{
 		S3Bucket: os.Getenv("S3_BUCKET"),
 		S3Region: os.Getenv("S3_REGION"),
 		S3Prefix: os.Getenv("S3_PREFIX"),
 	}
 
 	// Set default S3 prefix if not specified
-	if storageConfig.S3Prefix == "" {
-		storageConfig.S3Prefix = "gdrive-backup/"
+	if destConfig.S3Prefix == "" {
+		destConfig.S3Prefix = "gdrive-backup/"
 	}
 
-	// Create the cloud service
-	cloudService := googledrive.NewService(cloudConfig)
+	// Create the source service
+	sourceService := googledrive.NewService(sourceConfig)
 
-	// Create the storage service
-	storageService := s3storage.NewService(storageConfig)
+	// Create the destination service
+	destService := s3storage.NewService(destConfig)
 
 	// Create backup client configuration
 	backupConfig := backup.Config{
@@ -45,7 +43,7 @@ func main() {
 	}
 
 	// Create backup client with the services
-	client, err := backup.NewBackupClient(cloudService, storageService, backupConfig)
+	client, err := backup.NewBackupClient(sourceService, destService, backupConfig)
 	if err != nil {
 		log.Fatalf("Failed to create backup client: %v", err)
 	}
@@ -79,5 +77,5 @@ func main() {
 	syncState := client.GetSyncState()
 	log.Printf("Backup completed successfully! Synced %d files.", len(syncState.Files))
 	log.Printf("Files are stored in S3 bucket: %s with prefix: %s", 
-		storageConfig.S3Bucket, storageConfig.S3Prefix)
+		destConfig.S3Bucket, destConfig.S3Prefix)
 } 
